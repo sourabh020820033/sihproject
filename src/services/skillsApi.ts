@@ -17,21 +17,17 @@ interface JobApiResponse {
 }
 
 class SkillsApiService {
-  private baseUrl = 'https://api.github.com'; // Using GitHub as example
+  private baseUrl = 'https://api.github.com';
   private fallbackEnabled = true;
 
   async fetchSkillsForRole(roleId: string): Promise<SkillApiResponse> {
     try {
       console.log(`Fetching skills for role: ${roleId}`);
       
-      // Simulate API call with realistic delay
+      
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // In a real implementation, you would call multiple APIs:
-      // 1. GitHub Jobs API for tech skills
-      // 2. LinkedIn Skills API for market trends
-      // 3. Stack Overflow Developer Survey for popularity
-      // 4. Custom industry APIs for domain-specific skills
+      
       
       const response = await this.simulateSkillsApi(roleId);
       
@@ -57,7 +53,7 @@ class SkillsApiService {
       console.log('Fetching trending skills...');
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Simulate trending skills from various APIs
+      
       return [
         'AI/Machine Learning',
         'Kubernetes',
@@ -81,16 +77,11 @@ class SkillsApiService {
       console.log(`Fetching job market data for: ${location}`);
       await new Promise(resolve => setTimeout(resolve, 2000));
       
-      // This would integrate with:
-      // - Indeed API
-      // - Glassdoor API
-      // - LinkedIn API
-      // - AngelList API
-      // - Remote job boards
+    
       
       return {
         jobs: await this.getEnhancedJobData(),
-        totalCount: 50000, // Simulated total jobs
+        totalCount: 50000, 
         trending: ['Remote Work', 'AI/ML', 'Cloud Native', 'Cybersecurity']
       };
     } catch (error) {
@@ -104,11 +95,7 @@ class SkillsApiService {
       console.log(`Fetching salary data for ${roleId} in ${location}`);
       await new Promise(resolve => setTimeout(resolve, 1200));
       
-      // This would integrate with salary APIs like:
-      // - Glassdoor API
-      // - PayScale API
-      // - Salary.com API
-      // - Local market data
+  
       
       const baseSalary = this.calculateBaseSalary(roleId);
       const locationMultiplier = this.getLocationMultiplier(location);
@@ -128,7 +115,7 @@ class SkillsApiService {
   }
 
   private async simulateSkillsApi(roleId: string): Promise<{ skills: Skill[] }> {
-    // Enhanced skills based on role with more realistic data
+    
     const skillsMap: { [key: string]: Skill[] } = {
       'frontend-dev': [
         { name: 'React', category: 'technical', importance: 9, learningHours: 120, trending: true },
@@ -180,7 +167,7 @@ class SkillsApiService {
   }
 
   private async getEnhancedJobData(): Promise<JobRole[]> {
-    // This would return enhanced job data from multiple sources
+    
     return [
       {
         id: 'ai-engineer',
